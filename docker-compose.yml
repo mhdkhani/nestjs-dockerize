@@ -14,9 +14,6 @@ services:
       - redis
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules
-    command: >
-      sh -c "yarn install && yarn start:dev"
 
   postgres:
     container_name: postgres_db
