@@ -1,15 +1,12 @@
 import { Controller, Get } from "@nestjs/common";
-import {UserService} from "./user.service";
+import { UserService } from "./user.service";
 
-@Controller('public/v1')
+@Controller("public/v1")
 export class UserController {
-    constructor(
-        public userService: UserService
-    ) {
+  constructor(public userService: UserService) {}
 
-    }
-    @Get('/checkout/addresses')
-    async getAddressList(){
-
-    }
+  @Get("/all")
+  async getAllUsers() {
+    return this.userService.findAll();
+  }
 }
