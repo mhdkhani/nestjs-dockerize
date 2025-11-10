@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 # فقط package.json و yarn.lock برای cache نصب
 COPY package*.json ./
+RUN yarn global add @nestjs/cli
 RUN yarn install
 
 # حالا کل کد پروژه رو کپی کن
