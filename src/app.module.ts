@@ -4,6 +4,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { UserModule } from "./modules/user/user.module";
+import { RedisModule } from "./modules/redis/redis.module";
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { UserModule } from "./modules/user/user.module";
       autoLoadEntities: true,
       synchronize: true, // Set to false in production
     }),
-    UserModule,
+    UserModule,RedisModule
   ],
   controllers: [AppController],
   providers: [AppService],
