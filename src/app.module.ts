@@ -5,6 +5,7 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { UserModule } from "./modules/user/user.module";
 import { RedisModule } from "./modules/redis/redis.module";
+import { AuthModule } from './modules/auth/auth.module';
 
 @Module({
   imports: [
@@ -21,7 +22,9 @@ import { RedisModule } from "./modules/redis/redis.module";
       autoLoadEntities: true,
       synchronize: true, // Set to false in production
     }),
-    UserModule,RedisModule
+    UserModule,
+    RedisModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
